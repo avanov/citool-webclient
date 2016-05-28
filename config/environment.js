@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'citool-webclient',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
