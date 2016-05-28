@@ -3,23 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CitoolWebclient</title>
+    <title>CI Tool</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+    {{content-for 'head'}}
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/citool-webclient.css">
-
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
-
     <script src="assets/vendor.js"></script>
     <script src="assets/citool-webclient.js"></script>
 
-    {{content-for "body-footer"}}
+    {{content-for 'head-footer'}}
+  </head>
+  <body>
+    <!-- Begin application content -->
+    <div id="theapp">
+      {{content-for 'body'}}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy;2016 Maxim Avanov.</p>
+        {{content-for 'body-footer'}}
+      </div>
+    </footer>
+
   </body>
 </html>
