@@ -7,7 +7,7 @@ const { RSVP: { Promise }, isEmpty, run, get, $ } = Ember;
 
 
 export default BaseAuthenticator.extend({
-  clientAuthenticationEndpoint: '/api/o/login/fe',
+  clientAuthenticationEndpoint: '/api/users/me',
   ajax: service(),
 
   authenticate() {
@@ -22,7 +22,7 @@ export default BaseAuthenticator.extend({
   _request_session() {
     const clientAuthenticationEndpoint = this.get('clientAuthenticationEndpoint');
     return new Promise((resolve, reject) => {
-      return this.get('ajax').post(clientAuthenticationEndpoint).then(
+      return this.get('ajax').request(clientAuthenticationEndpoint).then(
         // A resolving promise will result in the session becoming authenticated.
         // Any data the promise resolves with will be saved in and accessible
         // via the session service's data.authenticated property

@@ -5,7 +5,7 @@ const { service } = Ember.inject;
 export default Ember.Component.extend({
   session: service('session'),
   ajax: service(),
-  serverAuthenticationEndpoint: '/api/o/login/be/{provider}',
+  serverAuthenticationEndpoint: '/api/login/{provider}',
 
   actions: {
     initiateLoginFlow(provider) {
